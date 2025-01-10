@@ -79,5 +79,5 @@ The following functions are available:
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/yourusername/google-sheets-clone.git
-cd google-sheets-clone
+git clone https://github.com/Tirthraj1605/Google-Sheets-Clone.git
+cd Google-Sheets-Clone
