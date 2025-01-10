@@ -1,52 +1,83 @@
-# Google Sheets Clone:
+# Google Sheets Clone Web Application
 
-> A spreadsheet editing app build using Reactjs.
+## Overview
+This project is a web application that mimics the core functionalities and user interface of Google Sheets. The application is designed with a focus on providing essential spreadsheet features such as data entry, mathematical and data quality functions, and user-friendly interactions.
 
-## Screenshot:
+---
 
-<b>[Experience it Live](https://main--comforting-biscotti-e87a56.netlify.app)</b>
+## Features
 
-<img src="./public/screenshot.png" alt="image-app"/>
+### 1. Spreadsheet Interface
+- **Google Sheets-like UI**: The application closely resembles Google Sheets, including a toolbar, formula bar, and grid structure.
+- **Drag Functions**: Supports dragging for cell content, formulas, and selections.
+- **Cell Dependencies**: Updates dependent cells dynamically when referenced cells change.
+- **Cell Formatting**: Includes options for bold, italics, font size, and color.
+- **Row and Column Management**: Users can add, delete, and resize rows and columns.
 
-## Features:
+### 2. Mathematical Functions
+The following functions are implemented:
+1. **SUM**: Calculates the sum of a range of cells.
+2. **AVERAGE**: Calculates the average of a range of cells.
+3. **MAX**: Returns the maximum value from a range of cells.
+4. **MIN**: Returns the minimum value from a range of cells.
+5. **COUNT**: Counts the number of cells containing numerical values in a range.
 
-1. Editing cells.
-2. Applying styles to cells.
-   1. Bold.
-   2. Italic.
-   3. Underline.
-   4. Alignment (left, center, right)
-   5. Font Family.
-   6. Font Size.
-   7. Color.
-   8. Background Color.
-3. Creating and Editing multiple sheets.
-4. Formula Evaluation.
-   1. Dependent cell value change causes other cell which are dependent on this to update as well.
-   2. Changing the cell contents of a cell directly removes the formula from the content cell directly.
-   3. Formula Evaluation does not support unary operators. eg to do 10 _ (-20) write the formula as 10 _ (0 - 20) {unary '-' is not supported}
-5. Conversion of sheets to json and reading from json.
-6. Copying and Pasting of a Single Cell (including formula and styles if any)
+### 3. Data Quality Functions
+The following functions are available:
+1. **TRIM**: Removes leading and trailing whitespace from a cell.
+2. **UPPER**: Converts text in a cell to uppercase.
+3. **LOWER**: Converts text in a cell to lowercase.
+4. **REMOVE_DUPLICATES**: Removes duplicate rows from a selected range.
+5. **FIND_AND_REPLACE**: Finds and replaces specific text within a range of cells.
 
-#### Maybe in Future (Raise PR if you want to do it.):
+### 4. Data Entry and Validation
+- Supports data input for numbers, text, and dates.
+- Implements basic validation to ensure data integrity (e.g., numeric cells only accept numbers).
 
-1. Multi-cell copy paste.
-2. Export/Import CSVs.
-3. App currently passes down state and dispaatch function as props modify so that it uses context
-4. App currently has two different kind of states, merge into one.
-5. Remove hacky ways to show alert.
-6. Maybe possible to optimize rerendering using useCallback, useMemo, React.memo. (I am not sure how.)
+### 5. Testing
+- Provides a testing mechanism for users to test implemented functions with custom data.
+- Displays function execution results clearly.
 
-#### Some Insights:
+---
 
-- Optimization:
-  - A lot of optimizations were made to how each component should render so as to avoid re rendering of complete app whenever a single cell is being edited.
-  - Multiple changes were made to how the state was being stored so as to make the optimizations.
-  - React.memo was used to make sure re rendering is done properly and when required.
-- CSS:
-  - Flexbox is used heavily.
-  - Some tricks involving opacity set to 0, to hide a component but make sure it's clickable etc were used to display icons for color changing.
-- Using infix to postfix conversion and postfix evaluation to parse and evaluate the formula.
-- DFS Cycle detection was used to detect if some formula is recursive in nature or not.
+## Bonus Features
+- Additional mathematical and data quality functions.
+- Complex formula support, including relative and absolute cell references.
+- Save and load spreadsheet capabilities.
+- Data visualization through charts and graphs.
 
-> Overall a good learning project.
+---
+
+## Tech Stack
+
+### Frontend
+- **React**: Used for building the user interface due to its component-based architecture and state management capabilities.
+- **Material-UI**: Provides a consistent and modern UI design for components like buttons, dropdowns, and icons.
+
+### Backend
+- **Node.js**: Serves API requests and manages business logic.
+- **Express.js**: A lightweight framework for routing and middleware.
+- **File System**: For saving and loading spreadsheets locally.
+
+### State Management
+- **Redux**: Manages application state and facilitates data flow between components.
+
+### Testing
+- **Jest**: Unit testing for functions and components.
+- **React Testing Library**: Ensures user interactions are correctly implemented.
+
+---
+
+## Data Structures
+- **Grid Representation**: A two-dimensional array is used to represent the spreadsheet grid. Each cell is an object with properties like `value`, `formula`, `dependencies`, `style`, etc.
+- **Dependency Graph**: A directed graph structure is used to manage cell dependencies, ensuring efficient updates when cells change.
+- **Clipboard**: Stores cell data temporarily for copy, cut, and paste operations.
+
+---
+
+## Installation and Usage
+
+### Clone the Repository
+```bash
+git clone https://github.com/yourusername/google-sheets-clone.git
+cd google-sheets-clone
