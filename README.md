@@ -4,7 +4,14 @@
 This project is a web application that mimics the core functionalities and user interface of Google Sheets. The application is designed with a focus on providing essential spreadsheet features such as data entry, mathematical and data quality functions, and user-friendly interactions.
 
 ---
+## Live Demo
+[Click here to access the live application](https://your-live-link-here.com)
 
+---
+## Screenshots
+![Spreadsheet Interface](screenshots/spreadsheet-interface.png)
+
+---
 ## Features
 
 ### 1. Spreadsheet Interface
