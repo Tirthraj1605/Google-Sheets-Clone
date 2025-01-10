@@ -5,7 +5,7 @@ This project is a web application that mimics the core functionalities and user 
 
 ---
 ## Live Demo
-[Click here to access the live application](https://stellar-salmiakki-ab4a39.netlify.app/)
+[For Live Experience](https://stellar-salmiakki-ab4a39.netlify.app/)
 
 ---
 ## Screenshots
