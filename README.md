@@ -9,7 +9,7 @@ This project is a web application that mimics the core functionalities and user 
 
 ---
 ## Screenshots
-![Spreadsheet Interface](screenshots/spreadsheet-interface.png)
+![Spreadsheet Interface](/public/screenshot.png)
 
 ---
 ## Features
